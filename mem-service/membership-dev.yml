@@ -3,7 +3,7 @@ member:
   min: 8
   max: 31
  price:
-  discount: 3
+  discount: 4
 vehicle:
  default:
   model: cross over
