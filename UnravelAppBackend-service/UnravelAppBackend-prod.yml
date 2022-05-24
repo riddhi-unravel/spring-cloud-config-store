@@ -1,0 +1,40 @@
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health,prometheus
+      base-path: /_monitor
+  endpoint:
+    health:
+      show-details: always
+logging:
+  level:
+    com:
+      unravel: INFO
+      zaxxer:
+        hikari:
+          HikariConfig: INFO
+          nodeValue: INFO
+    org:
+      springframework:
+        jdbc:
+          core: INFO
+        nodeValue: ERROR
+      hibernate:
+        SQL: INFO
+    root: INFO
+  file:
+    path: /logs/app-backend/
+    name: app-backend-service
+  config: classpath:logback-spring.xml
+spring:
+  jpa:
+    hibernate:
+      ddl-auto: none
+  datasource:
+    password: admiN@421
+    username: unravelgui
+    url: jdbc:mysql://10.0.2.27:3306/unravelapp?useSSL=false&allowPublicKeyRetrieval=true
+  output:
+    ansi:
+      enabled: DETECT

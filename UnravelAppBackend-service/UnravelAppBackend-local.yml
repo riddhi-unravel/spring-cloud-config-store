@@ -1,0 +1,40 @@
+management:
+  endpoints:
+    web:
+      exposure:
+        include: '*'
+      base-path: /_monitor
+  endpoint:
+    health:
+      show-details: always
+logging:
+  level:
+    com:
+      unravel: DEBUG
+      zaxxer:
+        hikari:
+          HikariConfig: INFO
+          nodeValue: INFO
+    org:
+      springframework:
+        jdbc:
+          core: DEBUG
+        nodeValue: ERROR
+      hibernate:
+        SQL: INFO
+    root: INFO
+  file:
+    path: /tmp/logs/app-backend/
+    name: app-backend-service
+  config: classpath:logback-spring.xml
+spring:
+  jpa:
+    hibernate:
+      ddl-auto: none
+  datasource:
+    password: admiN@421
+    username: unravelgui
+    url: jdbc:mysql://localhost:3308/unravelapp?useSSL=false&allowPublicKeyRetrieval=true
+  output:
+    ansi:
+      enabled: ALWAYS
