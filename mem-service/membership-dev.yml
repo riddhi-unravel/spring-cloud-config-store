@@ -8,3 +8,5 @@ vehicle:
  default:
   model: cross over
 duration: all
+server:
+ port: 6060
